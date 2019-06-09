@@ -1,0 +1,54 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.MightyPartyDecksList>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+    var decks = Model.Children<MightyPartyDeck>().ToArray();
+}
+
+<div class="content content-full">
+    <!-- PAGE-INNER -->
+    <div class="page-inner">
+        <!-- PAGE-HEADER -->
+        <div class="page-header">
+            <h4 class="page-title">@Model.PageTitle</h4>
+        </div>
+        <!-- / PAGE-HEADER -->
+        <!-- COLLECTION CONTAINER -->
+        <div class="container-fluid">
+            <div class="row">
+                @foreach (var deck in decks)
+                {
+                    var hero = deck.Value<MightyPartyHero>("hero");
+                    var cards = deck.DeckCards.Cast<MightyPartyCard>().ToArray();
+
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-secondary">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar">
+                                        <img src="@hero.HeroImage.Url" alt="@hero.HeroName" class="avatar-img rounded-circle">
+                                    </div>
+                                    <div class="card-title ml-2 fw-bold text-white">@deck.DeckTitile</div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex flex-row flex-wrap">
+                                    @foreach (var card in cards)
+                                    {
+                                        <div class="m-1">
+                                            <img src="@card.CardImage.Url" alt="@card.CardName" style="width: 83px;" />
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- / COLLECTION CONTAINER -->
+
+    </div>
+    <!-- / PAGE-INNER -->
+
+</div>

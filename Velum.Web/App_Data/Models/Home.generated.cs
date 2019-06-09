@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel
+	public partial class Home : PublishedContentModel, IPageBasic
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -51,5 +51,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("siteTitle")]
 		public string SiteTitle => this.Value<string>("siteTitle");
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => PageBasic.GetPageTitle(this);
 	}
 }
