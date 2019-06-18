@@ -32,11 +32,16 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="d-flex flex-row flex-wrap">
+                                <div class="d-flex flex-row flex-wrap justify-content-center justify-content-md-start">
                                     @foreach (var card in cards)
                                     {
-                                        <div class="m-1">
-                                            <img src="@card.CardImage.Url" alt="@card.CardName" style="width: 83px;" />
+                                        <div class="d-flex flex-column justify-content-center m-1" 
+                                             style="max-width: 120px; background-color: #@card.MightyPartyRarity.Color">
+                                            <div class="p-2 fw-bold text-white text-truncate"
+                                                 style="background-color: #@card.MightyPartyRarity.Color">
+                                                <small>@card.CardName</small>
+                                            </div>
+                                            <img src="@card.CardImage.Url" alt="@card.CardName" style="width: 120px;"/>
                                         </div>
                                     }
                                 </div>
