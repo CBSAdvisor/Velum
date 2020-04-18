@@ -53,6 +53,13 @@ namespace Umbraco.Web.PublishedModels
 		public IEnumerable<IPublishedContent> DeckCards => this.Value<IEnumerable<IPublishedContent>>("deckCards");
 
 		///<summary>
+		/// Deck Rate
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("deckRate")]
+		public int DeckRate => this.Value<int>("deckRate");
+
+		///<summary>
 		/// Deck Titile
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
@@ -65,5 +72,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
 		[ImplementPropertyType("hero")]
 		public IPublishedContent Hero => this.Value<IPublishedContent>("hero");
+
+		///<summary>
+		/// Tags: Tags
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.0.4")]
+		[ImplementPropertyType("tags")]
+		public IEnumerable<string> Tags => this.Value<IEnumerable<string>>("tags");
 	}
 }

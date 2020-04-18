@@ -1,0 +1,57 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.DragaliaLostAdventurerTierList>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+
+    var site = Model.Root();
+    var adventurers = site.DescendantsOfType("dragaliaLostAdventurer")
+        .Cast<DragaliaLostAdventurer>().OrderBy(x => x.ElementName).ToList();
+
+}
+
+<style type="text/css">
+    .tier-container {
+    }
+
+    .card .card-body .element-name  {
+        font-size: medium;
+        color: #777;
+    }
+</style>
+
+<div class="content content-full">
+    <div class="page-inner">
+        <!-- PAGE-HEADER -->
+        <div class="page-header">
+            <h4 class="page-title">@Model.PageTitle</h4>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Flame Adventurer Tier List</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-start flex-wrap">
+                            @foreach (var adv in adventurers)
+                            {
+                                <div class="col-md-4">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="">
+                                            <img src="@adv.ImageThumb.Url" width="65" height="65" alt="">
+                                        </div>
+                                        <div class="pl-2 element-name">@adv.ElementName</div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

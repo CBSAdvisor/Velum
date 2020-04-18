@@ -5,6 +5,19 @@
     var decks = Model.Children<MightyPartyDeck>().ToArray();
 }
 
+<style>
+    .rate-progress { 
+        height:15px;
+        margin:20px;
+        background-image: 
+                        linear-gradient(#ccc,#ccc),
+                        linear-gradient(to right,  #FF0000 10%,#FF4400 20%,#FF8800 30%,#FFAA00 40%,#FFCC00 50%,#FFFF00 60%,#CCFF00 70%,#88FF00 80%,#44FF00 90%,#00FF00 100%);
+        background-size:var(--p,50%) 100%,100% 100%;
+        background-position:right,left;
+        background-repeat:no-repeat;
+    }
+</style>
+
 <div class="content content-full">
     <!-- PAGE-INNER -->
     <div class="page-inner">
@@ -29,6 +42,9 @@
                                         <img src="@hero.HeroImage.Url" alt="@hero.HeroName" class="avatar-img rounded-circle">
                                     </div>
                                     <div class="card-title ml-2 fw-bold text-white">@deck.DeckTitile</div>
+                                    <div style="flex: 1;">
+                                        <div class="rate-progress" style="--p:@(100-deck.DeckRate)%"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-body">

@@ -3,6 +3,10 @@
     Layout = null;
     var site = Model.Root();
     var mightyPartyCcg = site.ChildrenOfType("mightyPartyCCG").Cast<MightyPartyCcg>().FirstOrDefault();
+    var cardHeroesCcg = site.ChildrenOfType("cardHeroesCCG").Cast<CardHeroesCcg>().FirstOrDefault();
+    var dragaliaLostNotes = site.DescendantsOfType("dragaliaLostNotes").Cast<DragaliaLostNotes>().FirstOrDefault();
+    var adventurerTierList = site.DescendantsOfType("dragaliaLostAdventurerTierList").Cast<DragaliaLostAdventurerTierList>().FirstOrDefault();
+    var investmentPortfolio  = site.FirstChild<InvestmentPortfolio>();
 }
 
 <!DOCTYPE html>
@@ -109,6 +113,24 @@
                                 <p>Dashboard</p>
                             </a>
                         </li>
+                        <!-- INVESTMENT PORTFOLIO -->
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#investmentPortfolio">
+                                <i class="fas fa-paint-roller"></i>
+                                <p>Investment Portfolio</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="investmentPortfolio">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="@investmentPortfolio.Url">
+                                            <span class="sub-item">Investment Portfolio</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- / INVESTMENT PORTFOLIO -->
                         <!-- MIGHTY PARTY -->
                         <li class="nav-item">
                             <a data-toggle="collapse" href="#mightyPartyPages">
@@ -132,6 +154,47 @@
                             </div>
                         </li>
                         <!-- / MIGHTY PARTY -->
+                        <!-- CARD HEROES -->
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#cardHeroesPages">
+                                <i class="fas fa-paint-roller"></i>
+                                <p>Card Heroes</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="cardHeroesPages">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="@cardHeroesCcg.Decks.Url">
+                                            <span class="sub-item">Card Heroes Decks</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- / CARD HEROES -->
+                        <!-- DRAGALIA LOST -->
+                        <li class="nav-item">
+                            <a data-toggle="collapse" href="#dragaliaLosPages">
+                                <i class="fas fa-paint-roller"></i>
+                                <p>Dragalia Lost</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="dragaliaLosPages">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="@dragaliaLostNotes.Url">
+                                            <span class="sub-item">Notes</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@adventurerTierList.Url">
+                                            <span class="sub-item">@adventurerTierList.PageTitle</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- / DRAGALIA LOST -->
                     </ul>
                 </div>
             </div>

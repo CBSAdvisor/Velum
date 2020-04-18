@@ -1,0 +1,65 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.CardHeroesDecksList>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "cardHeroesLayout.cshtml";
+    var decks = Model.Children<CardHeroesDeck>().ToArray();
+}
+
+<style type="text/css">
+    .deck-list-container {
+    }
+</style>
+
+<div class="content content-full">
+    <div class="page-inner">
+        <!-- PAGE-HEADER -->
+        <div class="page-header">
+            <h4 class="page-title">@Model.PageTitle</h4>
+        </div>
+        <!-- / PAGE-HEADER -->
+        <div class="container">
+
+            <div class="container deck-list-container">
+                <div class="d-flex flex-row justify-content-start flex-wrap">
+                    @{
+                        var tags = new[] { "arena", "adventures", "Card Dueling Empire" };
+                    }
+                    @foreach (var tag in tags)
+                    {
+                        var d = decks.Where(x => x.Tags.Contains(tag)).OrderBy(x=>x.DeckTitle);
+                        <div class="d-flex flex-column flex-fill justify-content-start align-items-stretch">
+                            <div class="d-flex flex-row p-3 bg-secondary fw-bold text-white">@tag.ToUpper()</div>
+                            <div class="d-flex flex-row flex-wrap">
+                                @foreach (var item in d)
+                                {
+                                    <div class="d-flex flex-column p-1 m-2" style="background-color: #653504;">
+                                        <div class="fw-bold text-white text-truncate p-2 bg-secondary">
+                                            <small>@item.DeckTitle</small>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <div class="p-1">
+                                                <img src="@(item.Card11?.Url ?? string.Empty)" width="96" />
+                                            </div>
+                                            <div class="p-1">
+                                                <img src="@(item.Card12?.Url ?? string.Empty)" width="96" />
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-row">
+                                            <div class="p-1">
+                                                <img src="@(item.Card21?.Url ?? string.Empty)" width="96" />
+                                            </div>
+                                            <div class="p-1">
+                                                <img src="@(item.Card22?.Url ?? string.Empty)" width="96" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                    </div>
+        </div>
+    </div>
+</div>

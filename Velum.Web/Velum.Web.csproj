@@ -387,6 +387,10 @@
     <Reference Include="Umbraco.Web, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.0.2\lib\net472\Umbraco.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Umbraco.Web.PublishedModels, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Umbraco.Web.PublishedModels.dll</HintPath>
+    </Reference>
     <Reference Include="Umbraco.Web.UI, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.0.2\lib\net472\Umbraco.Web.UI.dll</HintPath>
     </Reference>
@@ -759,6 +763,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composers\RegisterSuperSiteServiceComposer.cs" />
+    <Compile Include="Controllers\InvestmentPortfolioController.cs" />
+    <Compile Include="Models\Currency.cs" />
+    <Compile Include="Models\Rates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -817,6 +825,15 @@
     <Content Include="Views\MightyPartyDeck.cshtml" />
     <Content Include="Views\MightyPartyDecksList.cshtml" />
     <Content Include="Views\MightyPartyHeroesList.cshtml" />
+    <Content Include="Views\CardHeroesDecksList.cshtml" />
+    <Content Include="Views\CardHeroes.cshtml" />
+    <Content Include="Views\CardHeroesDeck.cshtml" />
+    <Content Include="Views\cardHeroesLayout.cshtml" />
+    <Content Include="Views\DragaliaLostAdventurerCollection.cshtml" />
+    <Content Include="Views\DragaliaLostElementTypeList.cshtml" />
+    <Content Include="Views\DragaliaLostNotes.cshtml" />
+    <Content Include="Views\DragaliaLostAdventurerTierList.cshtml" />
+    <Content Include="Views\InvestmentPortfolio.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -828,7 +845,9 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\InvestmentPortfolio\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

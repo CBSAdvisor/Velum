@@ -1,0 +1,298 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.DragaliaLostNotes>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}
+
+<style type="text/css">
+    .featured-items-cell {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        transition: all .2s;
+    }
+
+        .featured-items-cell:hover {
+            background-color: #f4f5f8;
+            border-radius: 3px;
+        }
+
+        .featured-items-cell .icon-preview {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            line-height: 1;
+            color: #333439;
+        }
+
+            .featured-items-cell .icon-preview.obtained {
+                background: #7eef96 !important;
+                color: white;
+            }
+
+            .featured-items-cell .icon-preview.yes {
+                background: #f2f6f3 !important;
+                color: #54ca02;
+            }
+
+            .featured-items-cell .icon-preview.no {
+                background: #f2f6f3 !important;
+                color: #ed3716;
+            }
+
+    .featured-items-cell .element-name {
+            font-size: medium;
+            color: #777;
+        }
+</style>
+
+<div class="content content-full">
+    <div class="page-inner">
+        <!-- PAGE-HEADER -->
+        <div class="page-header">
+            <h4 class="page-title">@Model.PageTitle</h4>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Dulcet Delights & Valentine's Confections Rerun</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="featured-items-cell">
+                            <div class="icon-preview">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview yes">
+                                <i class="la flaticon-hands"></i>
+                            </div>
+                            <div class="icon-preview yes">
+                                <i class="la flaticon-hands"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/character/valentines-melody">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2020-02/110027_02_r05%20%2341503.png?itok=tfQ0HeZf" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/character/valentines-melody">Valentine's Melody</a>
+                                </div>
+                                <div><small>Adventurer</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview yes">
+                                <i class="la flaticon-hands"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/character/valentines-addis">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2020-02/110310_02_r05%20%2341709.png?itok=ztjcwiQ6" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/character/valentines-addis">Valentine's Addis</a>
+                                </div>
+                                <div><small>Adventurer</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/character/valentines-hildegarde">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2019-02/Valentine%26%23039%3Bs%20Hildegarde-icon_1.png?itok=dh5yX11k" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/character/valentines-hildegarde">Valentine's Hildegarde</a>
+                                </div>
+                                <div><small>Adventurer</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview obtained">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/character/valentines-ezelith">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2019-02/Valentine%26%23039%3Bs%20Ezelith-icon_0.png?itok=0YXfn04O" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/character/valentines-ezelith">Valentine's Ezelith</a>
+                                </div>
+                                <div><small>Adventurer</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/character/valentines-orion">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2019-02/Valentine%26%23039%3Bs%20Orion-icon_0.png?itok=ufwUhIQb" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/character/valentines-orion">Valentine's Orion</a>
+                                </div>
+                                <div><small>Adventurer</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/character/durant">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2019-11/110343_01_r04%20%23128142.png?itok=2Lp-cve-" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/character/durant">Durant</a>
+                                </div>
+                                <div><small>Adventurer</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="icon-preview no">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/dragon/epimetheus">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2020-02/210112_01%20%234097.png?itok=AZNuL-j5" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/dragon/epimetheus">Epimetheus</a>
+                                </div>
+                                <div><small>Dragon</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview obtained">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview yes">
+                                <i class="la flaticon-hands"></i>
+                            </div>
+                            <div class="icon-preview yes">
+                                <i class="la flaticon-hands"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/dragon/vayu">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2019-08/210098_01%20%2371279.png?itok=TZL4qIAR" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/dragon/vayu">Vayu</a>
+                                </div>
+                                <div><small>Dragon</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview obtained">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="icon-preview">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/wyrmprint/fires-hate">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2020-02/400413_01%20%233928.png?itok=8x5AiiPZ" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/wyrmprint/fires-hate">The Fires of Hate</a>
+                                </div>
+                                <div><small>Wyrmprint</small></div>
+                            </div>
+                        </div>
+                        <div class="featured-items-cell">
+                            <div class="icon-preview obtained">
+                                <i class="la flaticon-check"></i>
+                            </div>
+                            <div class="icon-preview">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="icon-preview">
+                                <i class="la flaticon-hands-1"></i>
+                            </div>
+                            <div class="">
+                                <a href="https://gamepress.gg/dragalialost/wyrmprint/maid-crusade">
+                                    <img src="https://gamepress.gg/dragalialost/sites/dragalialost/files/styles/65x65/public/2020-02/400414_01%20%233948.png?itok=Z0CTaKEm" width="65" height="65" alt="" typeof="foaf:Image">
+                                </a>
+                            </div>
+                            <div class="flex-column pl-2">
+                                <div class="element-name">
+                                    <a href="https://gamepress.gg/dragalialost/wyrmprint/maid-crusade">The Maid Crusade</a>
+                                </div>
+                                <div><small>Wyrmprint</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
