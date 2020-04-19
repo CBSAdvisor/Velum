@@ -52,11 +52,6 @@
     <key alias="domainExists">Domain '%0%' zaten atanmış</key>
     <key alias="domainUpdated">Domain '%0%' güncellendi</key>
     <key alias="orEdit">Geçerli domain düzenle</key>
-    <key alias="domainHelp"><![CDATA[
-    Geçerli alan adları şunlardır : " umbraco.com ", " www.umbraco.com ", " umbraco.com:8080 " ya da
-        " https://www.umbraco.com/ " . <br /> etki /> bir düzey yollar desteklenir <br , örneğin . " umbraco.com/en " . Bununla birlikte,
-        kaçınılmalıdır. Daha yukarıdaki kültür ayarını kullanın
-    ]]></key>
     <key alias="inherit">Miras Al</key>
     <key alias="setLanguage">Kültür</key>
     <key alias="setLanguageHelp"><![CDATA[Geçerli düğümün altındaki düğümler için kültür Set <br /> veya üst düğümleri kültürünü devralır. Ayrıca <br /> geçerli olacaktır
@@ -208,7 +203,6 @@
     <key alias="linkinternal">İç Bağlantı:</key>
     <key alias="linklocaltip">Yerel bağlantıları kullanırken, bağlantının önündeki "# " insert</key>
     <key alias="linknewwindow">Yeni pencerede aç</key>
-    <key alias="macroContainerSettings">Makro ayarları</key>
     <key alias="macroDoesNotHaveProperties">Düzenleyebileceğiniz Bu makro herhangi bir özellikleri içermiyor</key>
     <key alias="paste">Yapıştır</key>
     <key alias="permissionsEdit">İzinleri düzenle</key>
@@ -244,13 +238,6 @@
     <key alias="enterTags">(Basın, her etiketinden sonra girin) etiket eklemek için yazın ...</key>
   </area>
   <area alias="editcontenttype">
-    <key alias="allowedchildnodetypes">İzin alt düğüm çeşitleri</key>
-    <key alias="create">Oluştur</key>
-    <key alias="deletetab">Sekmesini sil</key>
-    <key alias="description">Tanım</key>
-    <key alias="newtab">Yeni sekme</key>
-    <key alias="tab">Sekme</key>
-    <key alias="thumbnail">Küçük resim</key>
     <key alias="createListView" version="7.2">Özel liste görünüm oluşturun</key>
     <key alias="removeListView" version="7.2">Özel liste görünümü kaldır</key>
   </area>

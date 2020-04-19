@@ -17,7 +17,7 @@ namespace Velum.Web.Controllers
     public class InvestmentPortfolioController : RenderMvcController
     {
         // GET: InvestmentPortfolio
-        public async Task<ActionResult> Index(ContentModel<ContentModels.InvestmentPortfolio> model)
+        public async Task<ActionResult> Index(ContentModel model)
         {
             ViewData["Currencies"] = await GetCurrencies();
 

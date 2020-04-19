@@ -55,9 +55,6 @@
     <key alias="domainExists">Domein '%0' is al aanwezig</key>
     <key alias="domainUpdated">Domein '%0%' is bijgewerkt</key>
     <key alias="orEdit">Bewerk huidige domeinen</key>
-    <key alias="domainHelp"><![CDATA[Geldige domeinnamen zijn: "example.com", "www.example.com", "example.com:8080" of
-        "https://www.example.com/".<br /><br />Zgn. 'one-level' paden in domeinen worden ondersteund, bijv. "example.com/en". Echter, ze
-        zouden moeten worden vermeden. Gebruik bij voorkeur de cultuurinstelling hierboven.]]></key>
     <key alias="inherit">Overerven</key>
     <key alias="setLanguage">Cultuur</key>
     <key alias="setLanguageHelp"><![CDATA[Zet de cultuur voor de nodes onder de huidige node,<br /> of erf de cultuur over van de oudernodes. Zal ook van toepassing <br />
@@ -266,7 +263,6 @@
     <key alias="linkinternal">Interne link:</key>
     <key alias="linklocaltip">Plaats een hekje (“#”) voor voor interne links.</key>
     <key alias="linknewwindow">In nieuw venster openen?</key>
-    <key alias="macroContainerSettings">Macro Settings</key>
     <key alias="macroDoesNotHaveProperties">Deze macro heeft geen eigenschappen die u kunt bewerken</key>
     <key alias="paste">Plakken</key>
     <key alias="permissionsEdit">Bewerk rechten voor</key>
@@ -333,13 +329,6 @@
     <key alias="usernameHint">Jouw gebruikersnaam is meestal jouw email</key>
   </area>
   <area alias="editcontenttype">
-    <key alias="allowedchildnodetypes">Toegelaten subnodetypes</key>
-    <key alias="create">Nieuw</key>
-    <key alias="deletetab">Tab verwijderen</key>
-    <key alias="description">Omschrijving</key>
-    <key alias="newtab">Nieuwe tab</key>
-    <key alias="tab">Tab</key>
-    <key alias="thumbnail">Miniatuur</key>
     <key alias="createListView" version="7.2">Maak een aangepaste lijstweergave</key>
     <key alias="removeListView" version="7.2">Verwijder aangepaste lijstweergave</key>
   </area>

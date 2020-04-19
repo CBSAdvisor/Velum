@@ -2,7 +2,7 @@
 <language alias="zh_tw" intName="Chinese (Taiwan)" localName="中文（正體，台灣）" lcid="0404" culture="zh-TW">
   <creator>
     <name>The Umbraco community</name>
-    <link>http://our.umbraco.org/documentation/Extending-Umbraco/Language-Files</link>
+    <link>https://our.umbraco.com/documentation/Extending-Umbraco/Language-Files</link>
   </creator>
   <area alias="actions">
     <key alias="assignDomain">管理主機名稱</key>
@@ -52,9 +52,6 @@
     <key alias="domainExists">功能變數名稱 '%0%' 已使用</key>
     <key alias="domainUpdated">功能變數名稱 '%0%' 已更新</key>
     <key alias="orEdit">編輯當前功能變數名稱</key>
-    <key alias="domainHelp"><![CDATA[合格的網域名稱："example.com"，"www.example.com"，"example.com:8080" 或
-        "https://www.example.com/"。也可以使用一層路徑，如： "example.com/en"。但是，最好避免。
-        建議使用上面的文化設定。]]></key>
     <key alias="inherit">繼承</key>
     <key alias="setLanguage">語言</key>
     <key alias="setLanguageHelp"><![CDATA[改變目前節點以下其餘節點的文化設定，<br />或從父節點繼承文化設定。<br />
@@ -169,7 +166,7 @@
     <key alias="childItems" version="7.0">子項目</key>
     <key alias="target" version="7.0">目標</key>
     <key alias="scheduledPublishServerTime">預計發表的時間（伺服器端）</key>
-    <key alias="scheduledPublishDocumentation"><![CDATA[<a href="https://our.umbraco.org/documentation/Getting-Started/Data/Scheduled-Publishing/#timezones" target="_blank">這是什麼意思？</a>]]></key>
+    <key alias="scheduledPublishDocumentation"><![CDATA[<a href="https://our.umbraco.com/documentation/Getting-Started/Data/Scheduled-Publishing/#timezones" target="_blank">這是什麼意思？</a>]]></key>
   </area>
   <area alias="media">
     <key alias="clickToUpload">點選以便上傳</key>
@@ -251,7 +248,6 @@
     <key alias="linkinternal">內部連結：</key>
     <key alias="linklocaltip">本地連結請用“#”號開頭</key>
     <key alias="linknewwindow">在新視窗中打開？</key>
-    <key alias="macroContainerSettings">巨集設置</key>
     <key alias="macroDoesNotHaveProperties">本巨集沒有包含您可以編輯的屬性</key>
     <key alias="paste">粘貼</key>
     <key alias="permissionsEdit">編輯許可權</key>
@@ -314,13 +310,6 @@
     <key alias="email">輸入您的電子郵件</key>
   </area>
   <area alias="editcontenttype">
-    <key alias="allowedchildnodetypes">允許子項節點類型</key>
-    <key alias="create">創建</key>
-    <key alias="deletetab">刪除選項卡</key>
-    <key alias="description">描述</key>
-    <key alias="newtab">新建選項卡</key>
-    <key alias="tab">選項卡</key>
-    <key alias="thumbnail">縮略圖</key>
     <key alias="createListView" version="7.2">新增自訂清單檢視</key>
     <key alias="removeListView" version="7.2">移除自訂清單檢視</key>
   </area>
@@ -518,7 +507,7 @@
               <p>請編輯檔案"web.config" (例如使用Visual Studio或您喜歡的編輯器)，移動到檔案底部，並在名稱為"UmbracoDbDSN"的字串中設定資料庫連結資訊，並存檔。</p>
               <p>
               點選<strong>重試</strong>按鈕當上述步驟完成。<br />
-              <a href="http://our.umbraco.org/documentation/Using-Umbraco/Config-files/webconfig7" target="_blank">
+              <a href="https://our.umbraco.com/documentation/Using-Umbraco/Config-files/webconfig7" target="_blank">
 			              在此查詢更多編輯web.config的資訊。</a></p>]]></key>
     <key alias="databaseText"><![CDATA[要完成此步驟，您必須瞭解連結資料庫伺服器的重要資訊("connection string")。<br />
         若需要時，請聯繫您的網路公司。如果您在本地機器或伺服器安裝的話，您也許需要聯絡系統管理者。]]></key>

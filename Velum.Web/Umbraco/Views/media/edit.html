@@ -14,7 +14,10 @@
                                hide-description="true"
                                hide-alias="true"
                                navigation="content.apps"
-                               on-select-navigation-item="appChanged(item)">
+                               on-select-navigation-item="appChanged(item)"
+                               show-back-button="showBack()"
+                               on-back="onBack()"
+                               setpagetitle="header.setPageTitle">
             </umb-editor-header>
 
             <umb-editor-container>
