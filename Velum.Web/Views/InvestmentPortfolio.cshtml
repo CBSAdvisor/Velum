@@ -1,9 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.InvestmentPortfolio>
+@using Velum.Web.Domain.CurrencyRates
 @using Velum.Web.Models
+@using Velum.Web.NbrbApi.Models
 @using ContentModels = Umbraco.Web.PublishedModels;
 @{
     Layout = "master.cshtml";
-    var currencies = (Currency[]) ViewData["Currencies"];
+    var currencies = (IEnumerable<Currency>) ViewData["Currencies"];
 }
 
 <div class="content content-full">
@@ -23,7 +25,7 @@
                         <select class="custom-select" id="currencyList">
                             @foreach (var currency in currencies)
                             {
-                                <option value="@currency.Cur_ID">@currency.Cur_Abbreviation @currency.Cur_Name</option>
+                                <option value="@currency.Id">@currency.Abbreviation @currency.Name</option>
                             }
                         </select>
                     </div>

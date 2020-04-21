@@ -7,58 +7,52 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using Umbraco.Core.Mapping;
+using Umbraco.Core.Scoping;
 using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
+using Velum.Web.Domain.CurrencyRates;
 using Velum.Web.Models;
-using ContentModels = Umbraco.Web.PublishedModels;
+using Velum.Web.NbrbApi;
+using Velum.Web.NbrbApi.Models;
 
 namespace Velum.Web.Controllers
 {
     public class InvestmentPortfolioController : RenderMvcController
     {
+        private readonly INbrbApiClient _nbrbApiClient;
+        private readonly ICurrencyRatesManager _currencyRatesManager;
+        private readonly IScopeProvider _scopeProvider;
+        private readonly UmbracoMapper _mapper;
+
+        public InvestmentPortfolioController(
+            INbrbApiClient nbrbApiClient,
+            ICurrencyRatesManager currencyRatesManager,
+            IScopeProvider scopeProvider,
+            UmbracoMapper mapper)
+        {
+            _nbrbApiClient = nbrbApiClient;
+            _currencyRatesManager = currencyRatesManager;
+            _scopeProvider = scopeProvider;
+            _mapper = mapper;
+        }
+
         // GET: InvestmentPortfolio
         public async Task<ActionResult> Index(ContentModel model)
         {
-            ViewData["Currencies"] = await GetCurrencies();
+            await _currencyRatesManager.LoadAndSaveCurrencies();
+
+            var currencies = await _nbrbApiClient.GetCurrencies();
+            ViewData["Currencies"] = _mapper.MapEnumerable<ApiCurrencyDto, Currency>(currencies);
+
+            //using (var scope = _scopeProvider.CreateScope())
+            //{
+            //    //Always complete scope
+            //    scope.Database.Insert(currencies[0]);
+            //    scope.Complete();
+            //}
 
             return base.Index(model);
-        }
-
-        public const string MEDIA_TYPE_APPLICATION_JSON = "application/json";
-
-        public const string BASE_URL = "https://www.nbrb.by/";
-        public const string EP_GET_EXRATES_CURRENCIES = "/api/exrates/currencies";
-
-        private readonly JsonSerializerSettings _jsonSettings = new JsonSerializerSettings
-        {
-            MissingMemberHandling = MissingMemberHandling.Ignore,
-            NullValueHandling = NullValueHandling.Ignore
-        };
-
-        private Task<Currency[]> GetCurrencies()
-        {
-            return SendGetRequest<Currency[]>(EP_GET_EXRATES_CURRENCIES);
-        }
-
-        private async Task<T> SendGetRequest<T>(string url) where T : class
-        {
-            using (var http = new HttpClient { BaseAddress = new Uri(BASE_URL) })
-            {
-                using (var request = new HttpRequestMessage(HttpMethod.Get, url))
-                {
-                    request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(MEDIA_TYPE_APPLICATION_JSON));
-
-                    var response = await http.SendAsync(request).ConfigureAwait(false);
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        var errorContent = await response.Content.ReadAsStringAsync();
-                        throw new HttpException((int)response.StatusCode, errorContent);
-                    }
-
-                    var content = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<T>(content, _jsonSettings);
-                }
-            }
         }
     }
 }
